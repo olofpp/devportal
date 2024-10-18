@@ -15,13 +15,14 @@
     remote.allowAnyHosts = true
 
     stage('Remote BUILD IMAGE') {
-      sshCommand remote: remote, command: "docker build -t ${APPNAME}:latest -t ${APPNAME}:${VERSION} -f ${PATH}${DOCKERFILE} ${PATH}"
+        sshCommand remote: remote, command: "git clone ${GIT}"
+        sshCommand remote: remote, command: "docker build -t ${APPNAME}:latest -t ${APPNAME}:${VERSION} -f ${PATH}${DOCKERFILE} ${PATH}"
     }
     
     }
     stage('Remote PUSH IMAGE') {
-      sshCommand remote: remote, command: "docker push ${APPNAME}:latest"
-      sshCommand remote: remote, command: "docker push ${APPNAME}:${VERSION}"
+        sshCommand remote: remote, command: "docker push ${APPNAME}:latest"
+        sshCommand remote: remote, command: "docker push ${APPNAME}:${VERSION}"
     }
 
 }
