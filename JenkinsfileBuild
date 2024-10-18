@@ -5,6 +5,7 @@
 
     node {
 
+    def workspace = pwd()
     echo $WORKSPACE
 
     withCredentials([usernamePassword(credentialsId: 'wso2admin', passwordVariable: 'passWord', usernameVariable: 'userName')]) {
