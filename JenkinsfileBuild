@@ -1,7 +1,7 @@
     
     def remote = [:]
     remote.name = 'HOST'
-    remote.host = '${REMOTEHOST}'
+    remote.host = ${REMOTEHOST}
     
     node {
         
