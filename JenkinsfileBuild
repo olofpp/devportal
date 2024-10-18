@@ -6,7 +6,7 @@
     withCredentials([usernamePassword(credentialsId: 'wso2admin', passwordVariable: 'passWord', usernameVariable: 'userName')]) {
 
     remote.name = HOST
-    remote.host = ${REMOTEHOST}
+    remote.host = 10.67.107.24
     remote.user = userName
     remote.password = passWord
     remote.allowAnyHosts = true
