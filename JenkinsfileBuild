@@ -1,10 +1,10 @@
     
     def remote = [:]
+
+    node {
     remote.name = 'HOST'
     remote.host = ${REMOTEHOST}
-    
-    node {
-        
+            
     withCredentials([usernamePassword(credentialsId: 'wso2admin', passwordVariable: 'passWord', usernameVariable: 'userName')]) {
     
     remote.user = userName
