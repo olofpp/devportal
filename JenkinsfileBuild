@@ -5,6 +5,8 @@
 
     node {
 
+    echo $WORKSPACE
+
     withCredentials([usernamePassword(credentialsId: 'wso2admin', passwordVariable: 'passWord', usernameVariable: 'userName')]) {
 
     remote.user = userName
