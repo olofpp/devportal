@@ -2,11 +2,11 @@
     def remote = [:]
 
     node {
-    remote.name = 'HOST'
-    remote.host = '${REMOTEHOST}'
-            
+
     withCredentials([usernamePassword(credentialsId: 'wso2admin', passwordVariable: 'passWord', usernameVariable: 'userName')]) {
-    
+
+    remote.name = HOST
+    remote.host = ${REMOTEHOST}
     remote.user = userName
     remote.password = passWord
     remote.allowAnyHosts = true
