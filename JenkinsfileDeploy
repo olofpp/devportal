@@ -13,7 +13,7 @@
     remote.allowAnyHosts = true
     stage('Remote SSH') {
         sshCommand remote: remote, command: "docker stack rm ${APPNAME}"
-        sshCommand remote: remote, command: "sh('export APPNAME=${APPNAME} PFXPWD=${PFXPWD} IMAGE=${IMAGE} PFX=${PFX}'); docker stack deploy -c ${PATH}${APPNAME}.yml ${APPNAME}"
+        sshCommand remote: remote, command: "'export APPNAME=${APPNAME} PFXPWD=${PFXPWD} IMAGE=${IMAGE} PFX=${PFX}'; docker stack deploy -c ${PATH}${APPNAME}.yml ${APPNAME}"
     }
 }
 }
